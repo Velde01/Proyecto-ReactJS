@@ -1,11 +1,13 @@
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Footer></Footer>
+      <Navbar />
+      <ItemListContainer greeting="Bienvenidos a LuModa" />
+      <Footer />
     </>
   )
 }

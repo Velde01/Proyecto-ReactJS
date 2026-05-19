@@ -1,3 +1,5 @@
+import CartWidget from "../CartWidget/CartWidget";
+
 function Navbar() {
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -46,6 +48,7 @@ function Navbar() {
                     </ul>
                 </div>
             </div>
+            <CartWidget />
         </div>
     );
 }
