@@ -1,10 +1,35 @@
-function ItemListContainer({ greeting }) {
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import products from "../../data/products";
+import ItemList from "./ItemList";
+
+function ItemListContainer() {
+    const [items, setItems] = useState([]);
+    const { categoryId } = useParams();
+    useEffect(() => {
+        const getProducts = new Promise((resolve) => {
+            setTimeout(() => {
+                if (categoryId) {
+                    resolve(
+                        products.filter(
+                            product => product.category === categoryId
+                        )
+                    );
+                } else {
+                    resolve(products);
+                }
+            }, 1000);
+        });
+        getProducts.then((response) => {
+            setItems(response);
+        });
+    }, [categoryId]);
     return (
-        <main>
-            <h1>{greeting}</h1>
-            <p>Próximamente vas a ver el catálogo de productos.</p>
-        </main>
-    )
+        <div>
+            <h1>Catálogo LuModa</h1>
+            <ItemList products={items} />
+        </div>
+    );
 }
 
-export default ItemListContainer
+export default ItemListContainer;

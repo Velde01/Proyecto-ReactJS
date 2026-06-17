@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Routes, Route } from "react-router-dom";
+import NotFound from "./components/NotFound/NotFound";
+
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
           path="/item/:itemId"
           element={<ItemDetailContainer />}
         />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route 
+          path="*" element={<NotFound />} 
+        />
       </Routes>
       <Footer />
     </>
