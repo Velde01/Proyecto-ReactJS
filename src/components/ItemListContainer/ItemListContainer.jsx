@@ -25,9 +25,9 @@ function ItemListContainer() {
         });
     }, [categoryId]);
     return (
-        <div>
-            <h1>Catálogo LuModa</h1>
-            <ItemList products={items} />
+        <div >
+            <h1 className="text-3xl font-extrabold text-center tracking-wide mt-14 mb-10">Catálogo LuModa</h1>
+                <ItemList products={items} />
         </div>
     );
 }
