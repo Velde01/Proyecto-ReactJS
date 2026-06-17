@@ -1,16 +1,19 @@
 import CartWidget from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">LuModa</a>
+                <NavLink to="/" className="btn btn-ghost text-xl">
+                    LuModa
+                </NavLink>
             </div>
             <ul className="menu menu-horizontal px-1">
-                <li><a>Inicio</a></li>
-                <li><a>Mujer</a></li>
-                <li><a>Hombre</a></li>
-                <li><a>Accesorios</a></li>
+                <li><NavLink to="/">Inicio</NavLink></li>
+                <li><NavLink to="/category/mujer">Mujer</NavLink></li>
+                <li><NavLink to="/category/hombre">Hombre</NavLink></li>
+                <li><NavLink to="/category/accesorios">Accesorios</NavLink></li>
             </ul>
             <div className="flex-none">
                 <CartWidget />
